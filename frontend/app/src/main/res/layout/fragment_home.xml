@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.features.home.HomeFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:visibility="visible"
+        android:nestedScrollingEnabled="true"
+        android:id="@+id/recycle_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"/>
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/no_tweets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No Tweets Found!\nPlease Follow some Accounts."
+        android:textAlignment="center"
+        android:layout_gravity="center"
+        android:textSize="20sp"
+        android:textColor="#8D8D8D"
+        android:textStyle="bold"/>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

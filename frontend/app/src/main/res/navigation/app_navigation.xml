@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_navigation"
+    app:startDestination="@id/fragment_onboarding">
+
+    <action
+        android:id="@+id/actionToFragmentMyProfile"
+        app:destination="@id/fragment_my_profile" />
+
+    <action
+        android:id="@+id/action_to_notifications"
+        app:destination="@id/fragment_notification"/>
+
+    <action
+        android:id="@+id/action_to_messages"
+        app:destination="@id/fragment_messages"/>
+
+    <action
+        android:id="@+id/action_return_to_home"
+        app:destination="@id/fragment_home"
+        app:popUpTo="@id/fragment_home"
+        app:popUpToInclusive="false"/>
+
+    <action
+        android:id="@+id/action_to_dialog_image_preview"
+        app:destination="@id/show_tweets_images"/>
+
+    <action
+        android:id="@+id/action_to_fragment_user_profile"
+        app:destination="@id/fragment_user_profile">
+        <argument
+            android:name="user_id"
+            app:argType="string"
+            app:nullable="false"/>
+    </action>
+    <action
+        android:id="@+id/action_to_shareBottomSheetFragment"
+        app:destination="@id/shareBottomSheetFragment" />
+
+    <action
+        android:id="@+id/action_to_fragment_user_post"
+        app:destination="@id/fragment_post">
+        <argument
+            android:name="post_id"
+            app:argType="long"
+            app:nullable="false"/>
+    </action>
+    <action
+        android:id="@+id/action_to_dialog_submit_a_report"
+        app:destination="@id/dialog_submit_a_report"/>
+
+    <dialog
+        android:id="@+id/show_tweets_images"
+        android:name="com.app.cirkle.presentation.features.tweets.DialogShowTweetImages"
+        android:label="Image Preview"
+        tools:layout="@layout/dialog_image_preview"/>
+
+    <dialog
+        android:id="@+id/dialog_submit_a_report"
+        android:name="com.app.cirkle.presentation.features.report.SubmitReportDialog"
+        tools:layout="@layout/dialog_submit_report">
+        <argument
+            android:name="isPost"
+            app:argType="boolean"
+            android:defaultValue="true" />
+        <argument
+            android:name="targetId"
+            app:argType="long" />
+    </dialog>
+
+    <dialog
+        android:id="@+id/dialog_edit_tweet"
+        android:name="com.app.cirkle.presentation.features.post.dialogs.EditTweetDialog"
+        tools:layout="@layout/dialog_edit_tweet">
+    </dialog>
+
+
+    <fragment
+        android:id="@+id/fragment_notification"
+        android:name="com.app.cirkle.presentation.features.notification.NotificationsFragment"
+        android:label="Notifications"
+        tools:layout="@layout/fragment_notifications">
+        <action
+            android:id="@+id/action_notifications_to_follow_requests"
+            app:destination="@id/fragment_follow_requests" />
+    </fragment>
+    
+    <fragment
+        android:id="@+id/fragment_follow_requests"
+        android:name="com.app.cirkle.presentation.features.notification.FollowRequestsFragment"
+        android:label="Follow Requests"
+        tools:layout="@layout/fragment_follow_requests" />
+    <fragment
+        android:id="@+id/fragment_messages"
+        android:name="com.app.cirkle.presentation.features.shares.fragments.MessagesFragment"
+        android:label="Messages"
+        tools:layout="@layout/fragment_messages"/>
+    <fragment
+        android:id="@+id/fragment_onboarding"
+        android:name="com.app.cirkle.presentation.features.onboarding.info.OnBoardingFragment"
+        android:label="Onboard"
+        tools:layout="@layout/fragment_on_boarding" >
+        <action
+            android:id="@+id/action_fragment_onboarding_to_fragment_login"
+            app:destination="@id/fragment_login" />
+        <action
+            android:id="@+id/action_fragment_onboarding_to_fragment_home"
+            app:destination="@id/fragment_home"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/fragment_onboarding"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_login"
+        android:name="com.app.cirkle.presentation.features.login.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login">
+
+        <action
+            android:id="@+id/action_fragment_login_to_fragment_home"
+            app:destination="@id/fragment_home"
+            app:popUpTo="@id/fragment_onboarding"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_fragment_login_to_fragment_register"
+            app:destination="@id/fragment_register"/>
+        <action
+            android:id="@+id/action_fragment_login_to_forgot_password_fragment"
+            app:destination="@id/forgotPasswordFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_register"
+        android:name="com.app.cirkle.presentation.features.register.RegisterFragment"
+        android:label="Register"
+        tools:layout="@layout/fragment_register">
+
+        <action
+            android:id="@+id/action_fragment_register_to_fragment_choose_interest"
+            app:destination="@id/fragment_choose_interests"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_choose_interests"
+        tools:layout="@layout/fragment_choose_interest"
+        android:name="com.app.cirkle.presentation.features.onboarding.interests.ChooseInterestFragment"
+        android:label="Choose Interest">
+        <action
+            android:id="@+id/action_fragment_choose_interests_to_fragment_follow_voices"
+            app:destination="@id/fragment_follow_voices"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_follow_voices"
+        tools:layout="@layout/fragment_follow"
+        android:name="com.app.cirkle.presentation.features.onboarding.follow.FollowFragment"
+        android:label="Follow">
+        <action
+            android:id="@+id/action_fragment_follow_top_voices_to_fragment_home"
+            app:destination="@id/fragment_home"
+            app:popUpTo="@id/fragment_onboarding"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_home"
+        tools:layout="@layout/fragment_home"
+        android:name="com.app.cirkle.presentation.features.home.HomeFragment">
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_explore"
+        tools:layout="@layout/fragment_explore"
+        android:label="Explore"
+        android:name="com.app.cirkle.presentation.features.explore.ExploreFragment">
+
+        <action
+            android:id="@+id/action_explore_to_user_profile"
+            app:destination="@id/fragment_user_profile">
+            <argument
+                android:name="user_id"
+                app:argType="string"
+                app:nullable="false"/>
+        </action>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_activity"
+        android:name="com.app.cirkle.presentation.features.activity.common.ActivityFragment"
+        android:label="Activity"
+        tools:layout="@layout/fragment_activity">
+        <action
+            android:id="@+id/action_fragment_activity_to_shareBottomSheetFragment"
+            app:destination="@id/shareBottomSheetFragment">
+            <argument
+                android:name="tweetId"
+                app:argType="long" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_create"
+        android:name="com.app.cirkle.presentation.features.create.CreateFragment"
+        tools:layout="@layout/fragment_create">
+        <action
+            app:destination="@id/fragment_camera"
+            android:id="@+id/action_fragment_create_to_fragment_camera">
+        </action>
+        <action
+            android:id="@+id/action_fragment_create_to_fragment_my_profile"
+            app:destination="@id/fragment_my_profile" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_my_profile"
+        tools:layout="@layout/fragment_my_profile"
+        android:name="com.app.cirkle.presentation.features.myprofile.base.MyProfileFragment"
+        android:label="Profile">
+
+        <action
+            android:id="@+id/action_fragment_profile_to_fragment_edit_profile"
+            app:destination="@id/fragment_edit_profile"/>
+        <action
+            android:id="@+id/action_fragment_profile_to_fragment_settings"
+            app:destination="@id/fragment_setting"/>
+        <action
+            android:id="@+id/action_fragment_my_profile_to_shareBottomSheetFragment"
+            app:destination="@id/shareBottomSheetFragment" />
+        <action
+            android:id="@+id/action_fragment_my_profile_to_fragment_camera"
+            app:destination="@id/fragment_camera">
+            <argument
+                android:name="is_Circle"
+                app:argType="boolean"
+                android:defaultValue="false"/>
+            <argument
+                android:name="isFromProfile"
+                app:argType="boolean"
+                android:defaultValue="false"/>
+            <argument
+                android:name="isFromEditTweet"
+                app:argType="boolean"
+                android:defaultValue="true"/>
+        </action>
+
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_edit_profile"
+        tools:layout="@layout/fragment_edit_profile"
+        android:name="com.app.cirkle.presentation.features.myprofile.edit.EditProfile"
+        android:label="Profile">
+        <action
+            app:destination="@id/fragment_camera"
+            android:id="@+id/action_fragment_edit_profile_to_fragment_camera">
+
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_setting"
+        tools:layout="@layout/fragment_profile_settings"
+        android:name="com.app.cirkle.presentation.features.settings.ApplicationSettingFragment"
+        android:label="Profile"/>
+
+    <fragment
+        android:id="@+id/fragment_camera"
+        tools:layout="@layout/fragment_camera"
+        android:name="com.app.cirkle.presentation.features.media.CameraFragment"
+        android:label="Click Picture">
+        <argument
+            android:name="is_Circle"
+            app:argType="boolean"
+            app:nullable="false"/>
+        <argument
+            android:name="isFromProfile"
+            app:argType="boolean"
+            app:nullable="false"/>
+        <argument
+            android:name="isFromEditTweet"
+            app:argType="boolean"
+            android:defaultValue="false"/>
+        <action
+            android:id="@+id/action_fragment_camera_to_fragment_clicked_image_preview"
+            app:destination="@id/fragment_click_preview"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_click_preview"
+        android:label="Click Preview"
+        android:name="com.app.cirkle.presentation.features.media.ImagePreviewFragment"
+        tools:layout="@layout/fragment_preview_clicked_image">
+        <argument
+            android:name="is_circle"
+            app:nullable="false"
+            app:argType="boolean"/>
+        <argument
+            android:name="is_from_profile"
+            app:nullable="false"
+            app:argType="boolean"/>
+        <argument
+            android:name="is_from_edit_tweet"
+            app:argType="boolean"
+            android:defaultValue="false"/>
+
+        <action
+            android:id="@+id/action_fragment_click_preview_to_fragment_create_post"
+            app:destination="@id/fragment_create"
+            app:popUpTo="@id/fragment_create"
+            app:popUpToInclusive="true" />
+
+        <action
+            android:id="@+id/action_fragment_click_preview_to_fragment_edit_profile"
+            app:destination="@+id/fragment_edit_profile"
+            app:popUpTo="@id/fragment_edit_profile"
+            app:popUpToInclusive="true"/>
+
+        <action
+            android:id="@+id/action_fragment_click_preview_to_fragment_my_profile"
+            app:destination="@id/fragment_my_profile"
+            app:popUpTo="@id/fragment_my_profile"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_user_profile"
+        tools:layout="@layout/fragment_user_profile"
+        android:name="com.app.cirkle.presentation.features.userprofile.UserProfileFragment"
+        android:label="User Profile">
+        <argument
+            app:nullable="false"
+            android:name="user_id"
+            app:argType="string"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_post"
+        android:label=" View Post"
+        tools:layout="@layout/fragment_post"
+        android:name="com.app.cirkle.presentation.features.post.fragments.PostFragment">
+        <argument
+            app:nullable="false"
+            android:name="post_id"
+            app:argType="long"/>
+        <action
+            android:id="@+id/action_from_fragment_post_to_fragment_comment_replies"
+            app:destination="@id/fragment_comment_replies"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_comment_replies"
+        android:label="Replies"
+        tools:layout="@layout/fragment_comments_replies"
+        android:name="com.app.cirkle.presentation.features.post.fragments.CommentsRepliesFragment">
+        <argument
+            android:name="comment"
+            app:argType="com.app.cirkle.domain.model.tweet.Comment"
+            app:nullable="false"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/forgotPasswordFragment"
+        android:name="com.app.cirkle.presentation.features.forgot_password.ForgotPasswordFragment"
+        android:label="ForgotPasswordFragment">
+        <argument
+            android:name="showBackToLoginButton"
+            app:argType="boolean"
+            android:defaultValue="true" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/shareBottomSheetFragment"
+        android:name="com.app.cirkle.presentation.features.shares.fragments.ShareBottomSheetFragment"
+        android:label="Share Tweet"
+        tools:layout="@layout/bottom_sheet_share">
+        <argument
+            android:name="tweetId"
+            app:argType="long" />
+    </dialog>
+
+    <dialog
+        android:id="@+id/follow_following_dialog"
+        android:name="com.app.cirkle.presentation.features.myprofile.dialog.FollowFollowingDialog"
+        tools:layout="@layout/dialog_follow_following"/>
+
+</navigation>

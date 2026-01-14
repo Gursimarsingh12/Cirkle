@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="96"
+    android:viewportHeight="96"
+    android:tint="@color/white">
+
+    <!-- Inner Circle -->
+    <group android:name="inner_circle"
+        android:pivotX="48"
+        android:pivotY="48">
+        <path
+            android:fillColor="@android:color/holo_purple"
+            android:pathData="M81.6,48 A33.6,33.6 0 1,1 14.4,48 A33.6,33.6 0 1,1 81.6,48" />
+    </group>
+    <path
+        android:fillColor="@android:color/holo_purple"
+        android:pathData="M91.2,48C91.2,71.8587 71.8587,91.2 48,91.2C24.1413,91.2 4.8,71.8587 4.8,48C4.8,24.1413 24.1413,4.8 48,4.8C71.8587,4.8 91.2,24.1413 91.2,48Z
+        M9.984,48C9.984,68.9957 27.0043,86.016 48,86.016C68.9957,86.016 86.016,68.9957 86.016,48C86.016,27.0043 68.9957,9.984 48,9.984C27.0043,9.984 9.984,27.0043 9.984,48Z" />
+</vector>

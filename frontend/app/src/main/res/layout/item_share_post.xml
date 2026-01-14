@@ -1,0 +1,232 @@
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:paddingBottom="8dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/dark_background"
+        android:orientation="horizontal"
+        android:paddingHorizontal="10dp"
+        android:gravity="center_vertical"
+        android:paddingVertical="6dp"
+        android:elevation="4dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/profile_pic"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginEnd="12dp"
+            android:layout_gravity="center_vertical"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full"
+            android:scaleType="centerCrop"
+            android:src="@drawable/default_user_img" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/header_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Sample header"
+                android:textSize="14sp"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/time"
+            android:paddingStart="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2m ago"
+            android:textSize="14sp"
+            android:textStyle="italic|bold"
+            android:textColor="@color/selected_color" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="8dp"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="12dp">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/profile_image"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center_vertical"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full"
+                android:src="@drawable/account_circle_48px"/>
+
+            <LinearLayout
+                android:id="@+id/profile_info_container"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <TextView
+                    android:id="@+id/post_creator_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Lt Gen Ram Chandar Tiwari"
+                    android:textStyle="bold"
+                    android:textSize="18sp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/post_creator_id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/user_id"/>
+
+                    <com.app.cirkle.core.components.CheckMark
+                        android:id="@+id/account_verification"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        app:accountType="pub" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/more_options_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/more_vert_48px"
+                    android:contentDescription="more"
+                    android:backgroundTint="@android:color/transparent"/>
+
+                <TextView
+                    android:id="@+id/post_created_before"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="19h"
+                    android:layout_gravity="center_horizontal"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <com.app.cirkle.core.components.ExpandableTextView
+            android:id="@+id/post_text"
+            android:clickable="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lato"
+            android:text="#India – #US Army-to-Army Staff Talks were held in #NewDelhi from 28–30 May 2025. The deliberations focused on reviewing the ongoing bilateral defence cooperation, assessing progress across various domains, identifying key areas for enhanced ... more"
+            android:maxLines="5"
+            android:ellipsize="end"
+            android:textColor="@color/black"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:gravity="end|center"
+            android:id="@+id/image_click_listeners"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/image_icon"
+                app:tint="@color/selected_color"
+                android:contentDescription="Image Icon"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/curved_grey_rectangle"
+                />
+            <TextView
+                android:id="@+id/image_count_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato"
+                android:text="4 Images"
+                android:textColor="@color/selected_color"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_marginEnd="8dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="8dp">
+
+            <com.app.cirkle.core.components.FavoriteTextView
+                android:id="@+id/like_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:favoriteState="false"
+                android:text="28K"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/comments_button"
+                android:clickable="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:background="@drawable/curved_grey_rectangle"
+                android:drawableStart="@drawable/comment_drawable"
+                android:drawablePadding="4dp"
+                android:padding="8dp"
+                android:textAlignment="center"
+                android:text="230"
+                android:textStyle="bold"
+                android:layout_marginStart="8dp"/>
+
+            <View
+                android:id="@+id/click_able_filler_view"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:clickable="true"/>
+
+            <com.app.cirkle.core.components.SavedImageButton
+                android:id="@+id/saved"
+                android:layout_marginEnd="8dp"
+                app:isSaved="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <ImageButton
+                android:id="@+id/share_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/share_48px"
+                android:contentDescription="share"
+                android:background="@drawable/curved_grey_rectangle"
+                android:padding="8dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

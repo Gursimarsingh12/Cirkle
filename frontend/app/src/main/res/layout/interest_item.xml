@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="8dp"
+    android:layout_marginBottom="6dp">
+
+    <TextView
+        android:id="@+id/interestTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Photography"
+        android:textColor="@color/white"
+        android:fontFamily="@font/lato_bold"
+        android:textSize="15sp"
+        android:background="@drawable/buttonbottomstyle"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp" />
+</FrameLayout>

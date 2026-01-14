@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SelectableChipView">
+        <attr name="chipText" format="string" />
+        <attr name="chipTextColor" format="color|reference" />
+        <attr name="chipTextColorSelected" format="color|reference" />
+        <attr name="isChipSelected" format="boolean" />
+    </declare-styleable>
+
+
+    <declare-styleable name="FavoriteTextView">
+        <attr name="favoriteState" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="SavedImageView">
+        <attr name="isSaved" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="AccountIdentity">
+        <attr name="accountType" format="enum">
+            <enum name="prime" value="0"/>
+            <enum name="pub" value="1"/>
+            <enum name="nothing" value="2"/>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="OrientationImageButton">
+        <attr name="isLandscape" format="boolean"/>
+    </declare-styleable>
+
+</resources>

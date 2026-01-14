@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    >
+
+    <!-- Instructions Text -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select new interests to add to your profile"
+        android:textSize="14sp"
+        android:textColor="@color/iconbgnotactive"
+        android:fontFamily="@font/lato"
+        android:layout_marginBottom="16dp"
+        android:gravity="center" />
+
+    <!-- Interests RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/interestsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:scrollbars="vertical" />
+
+</LinearLayout> 

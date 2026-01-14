@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingHorizontal="16dp"
+    android:paddingTop="8dp">
+
+    <!-- Top Row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp">
+
+        <!-- Profile Image -->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/profile_image"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:scaleType="center"
+            android:layout_gravity="center_vertical"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full"
+            android:src="@drawable/account_circle_48px" />
+
+        <!-- Profile Info -->
+        <LinearLayout
+            android:id="@+id/profile_info_container"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/post_creator_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lt Gen Ram Chandar Tiwari"
+                android:textStyle="bold"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/post_creator_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/user_id" />
+
+                <com.app.cirkle.core.components.CheckMark
+                    android:id="@+id/account_verification"
+                    android:layout_marginStart="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:accountType="pub" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Options -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/more_options_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/more_vert_48px"
+                android:backgroundTint="@android:color/transparent" />
+
+            <TextView
+                android:id="@+id/post_created_before"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="19h"
+                android:layout_gravity="center_horizontal" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Post Text -->
+    <com.app.cirkle.core.components.ExpandableTextView
+        android:id="@+id/post_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <!-- Post Images -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp">
+
+        <LinearLayout
+            android:layout_marginEnd="8dp"
+            android:layout_width="0dp"
+            android:layout_height="250dp"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/image_one"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="4dp"
+                android:src="@drawable/account_circle_48px"
+                android:scaleType="centerCrop"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.LargeComponent" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/image_two"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginTop="4dp"
+                android:src="@drawable/account_circle_48px"
+                android:scaleType="centerCrop"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.LargeComponent" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="250dp"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/image_three"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="4dp"
+                android:src="@drawable/account_circle_48px"
+                android:scaleType="centerCrop"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.LargeComponent" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/image_four"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginTop="4dp"
+                android:src="@drawable/account_circle_48px"
+                android:scaleType="centerCrop"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.LargeComponent" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Action Row -->
+    <LinearLayout
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <com.app.cirkle.core.components.FavoriteTextView
+            android:id="@+id/like_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:favoriteState="false"
+            android:text="28K" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/comments_button"
+            android:clickable="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:background="@drawable/curved_grey_rectangle"
+            android:drawableStart="@drawable/comment_drawable"
+            android:drawablePadding="4dp"
+            android:padding="8dp"
+            android:textAlignment="center"
+            android:text="230"
+            android:textStyle="bold"
+            android:layout_margin="4dp" />
+
+        <View
+            android:id="@+id/click_able_filler_view"
+            android:clickable="true"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <com.app.cirkle.core.components.SavedImageButton
+            android:id="@+id/saved"
+            android:layout_marginEnd="8dp"
+            app:isSaved="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageButton
+            android:id="@+id/share_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/share_48px"
+            android:background="@drawable/curved_grey_rectangle"
+            android:padding="8dp" />
+    </LinearLayout>
+
+    <!-- Divider -->
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tweet_items_horizontal_divider_width"
+        android:layout_marginTop="8dp"
+        android:background="#AAAAAA" />
+
+</LinearLayout>

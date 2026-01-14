@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:id="@+id/followRequestContainer"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp">
+        <com.google.android.material.imageview.ShapeableImageView
+            android:padding="4dp"
+            android:id="@+id/profile_image"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:scaleType="center"
+            android:layout_gravity="center_vertical"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full"
+            android:src="@drawable/account_circle_48px"/>
+
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+            <TextView
+                android:id="@+id/participant_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Gen XYZ"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/message_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="shared a post by Gen..."/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="19:50"/>
+            <TextView
+                android:textAlignment="center"
+                android:padding="2dp"
+                android:background="@drawable/red_circle"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:textSize="9dp"
+                android:textColor="@color/black"
+                android:text="4+"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divider4"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_weight="1"
+        android:background="?android:attr/listDivider" />
+
+
+</LinearLayout>

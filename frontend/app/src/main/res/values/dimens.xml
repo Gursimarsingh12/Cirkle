@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="def_text_med">21sp</dimen>
+    <dimen name="def_text_med_light">18sp</dimen>
+    <dimen name="tweet_items_horizontal_divider_width">1dp</dimen>
+</resources>

@@ -1,0 +1,329 @@
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/swipeRefreshLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/mainContent"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Top cover section -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="140dp">
+
+                <!-- Cover Image -->
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imgBanner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/image_icon" />
+
+                <!-- Gradient Overlay -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/top_gradient_overlay" />
+
+            </FrameLayout>
+
+            <!-- Space for floating profile image -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-50dp"
+                android:layout_marginStart="16dp"
+                android:paddingBottom="8dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="start"
+                    android:elevation="4dp"
+                    app:cardCornerRadius="60dp"
+                    app:cardElevation="4dp"
+                    app:cardPreventCornerOverlap="false">
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/imgProfile"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full"
+                        android:src="@drawable/default_user_img" />
+                </androidx.cardview.widget.CardView>
+                <!-- Floating Profile Image -->
+            </FrameLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:translationY="-60dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="16dp">
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/barrier_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="end"
+                    app:constraint_referenced_ids="guideline_barrier" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_barrier"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.32" />
+
+                <!-- Edit Profile Button -->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_edit_profile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="false"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/lato"
+                    android:drawableStart="@drawable/pencil"
+                    android:drawablePadding="6dp"
+                    android:padding="10dp"
+                    android:background="@drawable/whitebtnthemebg"
+                    android:text="Edit Profile"
+                    app:layout_constraintStart_toEndOf="@id/barrier_vertical"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/btn_settings"
+                    app:layout_constraintHorizontal_chainStyle="packed" />
+
+                <!-- Settings Button -->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_settings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="false"
+                    android:drawableLeft="@drawable/settings_24px"
+                    android:drawablePadding="6dp"
+                    android:textSize="16sp"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/lato"
+                    android:textStyle="bold"
+                    android:padding="10dp"
+                    android:background="@drawable/whitebtnthemebg"
+                    android:text="Settings"
+                    android:layout_marginStart="8dp"
+                    app:layout_constraintStart_toEndOf="@id/btn_edit_profile"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Sample content -->
+            <LinearLayout
+                android:layout_marginTop="-70dp"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/txtUserName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="User_name"
+                    android:textColor="@color/black"
+                    android:textSize="21sp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/txtUserId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/lato"
+                        android:layout_marginTop="2dp"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:textColor="@color/iconbgnotactive"
+                        android:text="user_id" />
+                    <com.app.cirkle.core.components.CheckMark
+                        android:layout_marginStart="4dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/check_mark"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/follower_following"
+                    android:layout_width="match_parent"
+                    android:clickable="true"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="6dp">
+                    <LinearLayout
+                        android:id="@+id/following_count_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/txtFollowingCount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/lato_bold"
+                            android:textSize="18sp"
+                            android:textColor="@color/black"
+                            android:text="000"
+                            android:clickable="true"
+                            android:focusable="true" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/lato"
+                            android:textStyle="bold"
+                            android:layout_marginStart="6dp"
+                            android:textSize="18sp"
+                            android:textColor="@color/iconbgnotactive"
+                            android:text="Following" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/followers_count_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:layout_marginStart="12dp"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/txtFollowerCount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/lato_bold"
+                            android:textSize="18sp"
+                            android:textColor="@color/black"
+                            android:text="000"
+                            android:clickable="true"
+                            android:focusable="true" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/lato"
+                            android:textStyle="bold"
+                            android:layout_marginLeft="6dp"
+                            android:textSize="18sp"
+                            android:textColor="@color/iconbgnotactive"
+                            android:text="Followers" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_marginTop="6dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lato_bold"
+                    android:textSize="16sp"
+                    android:id="@+id/txtBio"
+                    android:textColor="@color/black"
+                    android:text="Taking photos birds and flipping through spy novels" />
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none"
+                    android:layout_marginTop="6dp">
+                    <LinearLayout
+                        android:id="@+id/layoutInterests"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <include layout="@layout/interest_item" />
+                        <include layout="@layout/interest_item" />
+                        <include layout="@layout/interest_item" />
+                        <include layout="@layout/interest_item" />
+
+                    </LinearLayout>
+                </HorizontalScrollView>
+            </LinearLayout>
+
+            <!-- Progress Bar positioned over the content -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/iconbgnotactive" />
+
+            <!-- Tweets Section -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!-- Tweets Progress Bar -->
+                <ProgressBar
+                    android:id="@+id/tweetsProgressBar"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="50dp"
+                    android:visibility="gone" />
+
+                <!-- Empty Tweets View -->
+                <LinearLayout
+                    android:id="@+id/emptyTweetsView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:alpha="0.5"
+                        android:src="@drawable/ic_launcher_foreground" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:fontFamily="@font/lato_bold"
+                        android:text="No tweets yet"
+                        android:textColor="@color/iconbgnotactive"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/lato"
+                        android:text="Start sharing your thoughts with the world!"
+                        android:textColor="@color/iconbgnotactive"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <!-- 🔽 Feed RecyclerView -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/feedRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clipToPadding="false"
+                    android:overScrollMode="never" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

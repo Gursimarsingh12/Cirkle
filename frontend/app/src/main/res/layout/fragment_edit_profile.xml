@@ -1,0 +1,237 @@
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    tools:context=".presentation.features.myprofile.edit.EditProfile"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Top cover section -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="140dp">
+
+            <!-- Cover Image -->
+            <com.google.android.material.imageview.ShapeableImageView
+                android:clickable="true"
+                android:id="@+id/coverImageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/image_icon" />
+
+            <!-- Gradient Overlay -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/top_gradient_overlay" />
+
+            <!-- Back Button -->
+            <ImageView
+                android:id="@+id/backButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="10dp"
+                android:padding="8dp"
+                android:src="@drawable/backbtn"
+                android:layout_gravity="top|start" />
+
+            <ImageButton
+                android:id="@+id/change_banner"
+                android:layout_margin="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/pencil_editt"
+                android:layout_gravity="end|bottom"
+                android:background="@drawable/primary_color_circle"
+                android:padding="16dp"/>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-50dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="8dp">
+
+            <!-- Profile Image (non-editable for now) -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:elevation="4dp"
+                app:strokeWidth="0dp"
+                android:backgroundTint="@android:color/transparent">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    app:strokeWidth="1dp"
+                    app:strokeColor="#ADADAD"
+                    android:clickable="true"
+                    android:id="@+id/profileImageView"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:scaleType="centerCrop"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full"
+                    android:src="@drawable/default_user_img" />
+
+                <ImageButton
+                    android:id="@+id/change_profile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/pencil_editt"
+                    android:layout_gravity="end|bottom"
+                    android:background="@drawable/primary_color_circle"
+                    android:padding="12dp"/>
+            </com.google.android.material.card.MaterialCardView>
+        </FrameLayout>
+
+        <!-- Buttons below profile -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="end|center_vertical"
+            android:translationY="-60dp"
+            android:orientation="horizontal"
+            android:layout_gravity="end">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/save_profile_changes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="12sp"
+                android:text="Save Changes"
+                android:textSize="18sp"
+                android:layout_marginRight="20sp"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:fontFamily="@font/lato"
+                android:drawablePadding="10dp"
+                android:background="@drawable/whitebtnthemebg" />
+
+        </LinearLayout>
+
+        <!-- Form content -->
+        <LinearLayout
+            android:translationY="-50dp"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <!-- Display name -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:text="Display name" />
+
+            <EditText
+                android:id="@+id/etDisplayName"
+                android:gravity="start"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/whitebtnblkbg"
+                android:fontFamily="@font/lato"
+                android:layout_marginTop="6dp"
+                android:textStyle="bold"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:hint="Enter your display name"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <!-- Bio -->
+            <TextView
+                android:layout_marginTop="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:text="About yourself" />
+
+            <EditText
+                android:id="@+id/etBio"
+                android:gravity="start|top"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:background="@drawable/whitebtnblkbg"
+                android:fontFamily="@font/lato"
+                android:layout_marginTop="6dp"
+                android:textStyle="bold"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:hint="Tell us about yourself..."
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <!-- Title and Action Button Row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="16dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/lato"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:text="Interests" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/manageInterestsButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Manage Interests"
+                    android:textSize="16sp"
+                    android:background="@drawable/secclrbtnblkbg"
+                    android:textAllCaps="false"
+                    android:drawableLeft="@drawable/addbtn"
+                    android:drawablePadding="12dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/lato_bold" />
+            </LinearLayout>
+
+            <!-- ChipGroup for selected interests -->
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/interestChipGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:background="@drawable/whitebtnblkbg"
+                app:chipSpacing="8dp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="16dp"
+    android:gravity="center_vertical">
+
+    <!-- Profile Image -->
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/profile_image"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:scaleType="centerCrop"
+        app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full"
+        android:src="@drawable/default_user_img" />
+
+    <!-- User Info -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="12dp">
+
+        <TextView
+            android:id="@+id/follower_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User Name"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/follower_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@user_id"
+            android:textSize="14sp"
+            android:textColor="@color/iconbgnotactive" />
+
+        <TextView
+            android:id="@+id/timestamp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2h ago"
+            android:textSize="12sp"
+            android:textColor="@color/iconbgnotactive" />
+    </LinearLayout>
+
+    <!-- Action Buttons -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="8dp">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_accept"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="Accept"
+            android:textSize="12sp"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:paddingHorizontal="16dp"
+            android:background="@drawable/whitebtnthemebg"
+            android:layout_marginEnd="8dp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_decline"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="Decline"
+            android:textSize="12sp"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:paddingHorizontal="16dp"
+            android:background="@drawable/curved_grey_rectangle" />
+    </LinearLayout>
+
+</LinearLayout> 
